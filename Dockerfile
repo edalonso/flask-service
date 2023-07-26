@@ -1,6 +1,15 @@
 # start by pulling the python image
 FROM python:3.11-alpine
 
+LABEL version="1.0"
+LABEL description="Esta es una imagen personalizada de mi aplicación"
+LABEL environment="Producción"
+
+ENV MONGO_HOST="localhost"
+ENV MONGO_USER="root"
+ENV MONGO_PASSWORD="" 
+ENV MONGO_DB="test"
+
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
 

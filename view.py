@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from prometheus_client import Counter, generate_latest
+from pymongo import MongoClient
 import os
 
 app = Flask(__name__)
@@ -24,4 +25,7 @@ def metrics():
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
+    client = MongoClient(os.environ['MONGO_HOST']);
+    print("Connection to database Successful")
+    client.close();
     app.run(debug=True, host='0.0.0.0', port=port)

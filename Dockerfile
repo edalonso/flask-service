@@ -1,5 +1,5 @@
 # start by pulling the python image
-FROM python:3.11-alpine
+FROM python:3.11.4-alpine
 
 LABEL version="1.0"
 LABEL description="Esta es una imagen personalizada de mi aplicación"
